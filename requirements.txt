@@ -1,3 +1,4 @@
 requests
 apache-airflow
+pandas
 spotipy
