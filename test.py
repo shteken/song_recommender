@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -11,7 +12,7 @@ LIMIT_SONGS_PER_REQUEST = 50
 LIMIT_SONGS_PER_REQUEST_FOR_FEATURES = 100
 # extend to multiple playlists
 
-
+# get features from current lists
 total_songs_in_playlist = sp.playlist_tracks(playlist_id=PLAYLIST, fields="total")
 total_songs_in_playlist = total_songs_in_playlist["total"]
 number_of_pages_to_request = total_songs_in_playlist//LIMIT_SONGS_PER_REQUEST + 1
@@ -37,4 +38,13 @@ for song_group in range(1, number_of_requests+1):
     songs_features = sp.audio_features(all_track_ids[start_song:end_song])
     features_by_request.extend(songs_features)
 all_songs_features = pd.DataFrame(features_by_request)
+print(all_songs_features.describe(include="all"))
 print(all_songs_features)
+
+
+filepath = Path.home() / "music_database" / "features_songs_from_list" / "data.csv"
+filepath.parent.mkdir(parents=True, exist_ok=True)
+all_songs_features.to_csv(filepath)
+
+# get features from new releases
+# first need to create functions from the previous code and reuse them here
