@@ -2,3 +2,4 @@ requests
 apache-airflow
 pandas
 spotipy
+jupyter

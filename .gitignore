@@ -11,4 +11,4 @@ plugins/
 docker-compose.yaml
 pyvenv.cfg
 
-dags/*/__pycache__/
+**/__pycache__/
