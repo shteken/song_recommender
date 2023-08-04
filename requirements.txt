@@ -3,3 +3,4 @@ apache-airflow
 pandas
 spotipy
 jupyter
+scikit-learn
