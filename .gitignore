@@ -1,14 +1,8 @@
-bin/
-generated/
-include/
-lib/
-lib64
-logs/
-plugins/
+venv
+generated
 
 .cache
 .env
 docker-compose.yaml
-pyvenv.cfg
 
 **/__pycache__/

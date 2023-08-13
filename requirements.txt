@@ -1,6 +1,8 @@
+python-dotenv
 requests
 apache-airflow
 pandas
 spotipy
 jupyter
 scikit-learn
+pytest
